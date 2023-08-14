@@ -3,38 +3,37 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 const questions = () => inquirer.prompt([
     {
-        name: 'Title',
+        name: 'title',
         type: 'input',
         message: 'what is the title of your project?'
     },
     {
-        name: 'Description',
+        name: 'description',
         type: 'input',
         message: 'What is the description of your project?'
     },
-
     {
-        name: 'Installation',
+        name: 'installation',
         type: 'input',
         message: 'What are the installation instructions for your project?'
     },
     {
-        name: 'Usuage',
+        name: 'usage',
         type: 'input',
         message: "What are the usage guidelines for your project?"
     },
     {
-        name: 'Credits',
+        name: 'credits',
         type: 'input',
         message: "Who are the contributing programmers to your project?"
     },
     {
-        name: 'Contribute',
+        name: 'contribute',
         type: 'input',
         message: "How can other coders contribute to this project?"
     },
     {
-        name: 'Tests',
+        name: 'tests',
         type: 'input',
         message: 'Do you have examples of how to run tests with your program?'
     }
