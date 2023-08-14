@@ -39,17 +39,12 @@ const questions = () => inquirer.prompt([
     }
 ]);
 
-// TODO: Create a function to write README file
 questions().then((answers) => {
     const generated = generateMarkdown(answers);
     fs.writeFileSync('README.md', generated)
     }).then(() => console.log('Your README file has been written!'))
 
-// TODO: Create a function to initialize app
-function init() {
-
-}
-// Function call to initialize app
+function init() {}
 init();
 
 
