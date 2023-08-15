@@ -19,12 +19,19 @@ function renderLicenseSection(license) {
 function generateMarkdown({title, description, installation, usage, credits, contribute, test}) {
   return `
   # ${title}
-  ## ${description}
-  ## ${installation}
-  ## ${usage}
-  ## ${credits}
-  ## ${contribute}
-  ## ${test}
+  ## 'Description:' 
+  ${description}
+  ## 'Table of Contents:' 
+  ## 'Installation Instructions:' 
+  ${installation}
+  ## 'Usage:'
+  ${usage}
+  ## 'Credits:'
+  ${credits}
+  ## 'Ways to Contribute:'
+  ${contribute}
+  ## 'Test:'
+  ${test}
 `;
 }
 

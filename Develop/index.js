@@ -13,29 +13,50 @@ const questions = () => inquirer.prompt([
         message: 'What is the description of your project?'
     },
     {
+        name: 'install',
+        type: 'confirm',
+        message: 'Are there any special installation instructions?'
+    },
+    {   
         name: 'installation',
         type: 'input',
-        message: 'What are the installation instructions for your project?'
+        message: 'What are the special installation instructions?',
+        when: ({install}) => {
+            if(install){
+                return true;
+            }
+        }
     },
     {
         name: 'usage',
         type: 'input',
         message: "What are the usage guidelines for your project?"
     },
+       
     {
-        name: 'credits',
-        type: 'input',
-        message: "Who are the contributing programmers to your project?"
+        name: 'contributeCon',
+        type: 'confirm',
+        message: 'Are there any guidelines if anyone would like to contribute to this project?'
     },
     {
         name: 'contribute',
         type: 'input',
-        message: "How can other coders contribute to this project?"
+        message: 'What are the guidelines to contribute?'
+    },
+    {
+        name: 'testsEx',
+        type: 'confirm',
+        message: 'Do you have examples of how to run tests with your program?'
     },
     {
         name: 'tests',
         type: 'input',
-        message: 'Do you have examples of how to run tests with your program?'
+        message: 'What are examples of how to run tests with your program?',
+        when: ({testsEx}) => {
+            if(testsEx) {
+                return true;
+            }
+        }
     }
 ]);
 
