@@ -57,6 +57,36 @@ const questions = () => inquirer.prompt([
                 return true;
             }
         }
+    },
+    {
+        name: 'creditsCon',
+        type: 'confirm',
+        message: 'Do you need to credit anyone on this project?'
+    },
+    {
+        name: 'credits',
+        type: 'input',
+        message: 'Who needs to be credited?',
+        when: ({creditsCon}) => {
+            if(creditsCon) {
+                return true;
+            }
+        }
+    },
+    {
+        name: 'license',
+        type: 'list',
+        choices: ['MIT', 'GNU', 'ISC', 'ODbL', 'Apache'],
+    },
+    {
+        name: 'github',
+        type: 'input',
+        message: 'What is your GitHub username?'
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: 'What is your email address?'
     }
 ]);
 
