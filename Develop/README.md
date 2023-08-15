@@ -26,5 +26,5 @@
   ## License:
   MIT
   ## Contact:
-  -GitHub: a
-  -Email:  a
+  -GitHub: undefined
+  -Email:  undefined

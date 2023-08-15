@@ -28,9 +28,19 @@ const questions = () => inquirer.prompt([
         }
     },
     {
+        name: 'usageCon',
+        type: 'confirm',
+        message: 'Are there any special guidelines for usage?'
+    },
+    {
         name: 'usage',
         type: 'input',
-        message: "What are the usage guidelines for your project?"
+        message: 'What are the usage guidelines for your project?',
+        when: ({usageCon}) => {
+            if({usageCon}){
+                return true;
+            }
+        }
     },
        
     {
@@ -78,16 +88,6 @@ const questions = () => inquirer.prompt([
         type: 'list',
         choices: ['MIT', 'GNU', 'ISC', 'ODbL', 'Apache'],
     },
-    {
-        name: 'github',
-        type: 'input',
-        message: 'What is your GitHub username?'
-    },
-    {
-        name: 'email',
-        type: 'input',
-        message: 'What is your email address?'
-    }
 ]);
 
 questions().then((answers) => {
