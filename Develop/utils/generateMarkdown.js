@@ -4,14 +4,10 @@ const iscBadge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue
 const odblBadge = `[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)`;
 const apacheBadge = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
 
-
-
-
-
-function renderLicenseBadge({license}) {
-  if(license === 'MIT'){
+function renderLicenseBadge({ license }) {
+  if (license === 'MIT') {
     return mitBadge;
-  } else if (license === 'GNU GPL v3'){
+  } else if (license === 'GNU GPL v3') {
     return gnuBadge;
   } else if (license === 'ISC') {
     return iscBadge;
@@ -24,14 +20,11 @@ function renderLicenseBadge({license}) {
   }
 }
 
-
-
-function generateMarkdown({title, licenseBadge, description, installation, usage, credits, contribute, test, license, github, email}) {
+function generateMarkdown({ title, description, installation, usage, credits, contribute, test, license, github, email }) {
   return `
-  
   # ${title} 
   ## Badges
-  ${renderLicenseBadge({license})}
+  ${renderLicenseBadge({ license })}
   ## Description:
   ${description}
  
@@ -64,10 +57,4 @@ function generateMarkdown({title, licenseBadge, description, installation, usage
   * Email:  ${email}
 `;
 }
-
-
-
-
-
-
 module.exports = generateMarkdown;

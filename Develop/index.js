@@ -18,12 +18,12 @@ const questions = () => inquirer.prompt([
         type: 'confirm',
         message: 'Are there any special installation instructions?'
     },
-    {   
+    {
         name: 'installation',
         type: 'input',
         message: 'What are the special installation instructions?',
-        when: ({install}) => {
-            if(install){
+        when: ({ install }) => {
+            if (install) {
                 return true;
             }
         }
@@ -33,17 +33,16 @@ const questions = () => inquirer.prompt([
         type: 'confirm',
         message: 'Are there any usage guidelines?'
     },
-    {   
+    {
         name: 'usage',
         type: 'input',
         message: 'What are the usage guidelines?',
-        when: ({areUsage}) => {
-            if(areUsage){
+        when: ({ areUsage }) => {
+            if (areUsage) {
                 return true;
             }
         }
     },
-       
     {
         name: 'canContribute',
         type: 'confirm',
@@ -53,10 +52,10 @@ const questions = () => inquirer.prompt([
         name: 'contribute',
         type: 'input',
         message: 'What are the guidelines to contribute?',
-        when: ({canContribute}) => {
-            if(canContribute){
+        when: ({ canContribute }) => {
+            if (canContribute) {
                 return true;
-            } 
+            }
         }
     },
     {
@@ -68,8 +67,8 @@ const questions = () => inquirer.prompt([
         name: 'tests',
         type: 'input',
         message: 'What are examples of how to run tests with your program?',
-        when: ({testsEx}) => {
-            if(testsEx) {
+        when: ({ testsEx }) => {
+            if (testsEx) {
                 return true;
             }
         }
@@ -83,8 +82,8 @@ const questions = () => inquirer.prompt([
         name: 'credits',
         type: 'input',
         message: 'Who needs to be credited?',
-        when: ({creditsCon}) => {
-            if(creditsCon) {
+        when: ({ creditsCon }) => {
+            if (creditsCon) {
                 return true;
             }
         }
@@ -98,8 +97,8 @@ const questions = () => inquirer.prompt([
         name: 'license',
         type: 'list',
         choices: ['MIT', 'GNU GPL v3', 'ISC', 'ODbL', 'Apache'],
-        when: ({isLicense}) => {
-            if(isLicense){
+        when: ({ isLicense }) => {
+            if (isLicense) {
                 return true;
             } else {
                 return '';
@@ -121,11 +120,9 @@ const questions = () => inquirer.prompt([
 questions().then((answers) => {
     const generated = generateMarkdown(answers);
     fs.writeFileSync('./generated/README.md', generated)
-    }).then(() => console.log('Huzzah! Your README file has been written!'));
+}).then(() => console.log('Huzzah! Your README file has been written!'));
 
-
-
-function init() {}
+function init() { }
 init();
 
 
