@@ -1,8 +1,37 @@
-const licenseBadge = require('./licenseRender');
+const mitBadge = `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`;
+const gnuBadge = `[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)`;
+const iscBadge = `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`;
+const odblBadge = `[![License: ODbL](https://img.shields.io/badge/License-ODbL-brightgreen.svg)](https://opendatacommons.org/licenses/odbl/)`;
+const apacheBadge = `[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`;
+
+
+
+
+
+function renderLicenseBadge({license}) {
+  if(license === 'MIT'){
+    return mitBadge;
+  } else if (license === 'GNU GPL v3'){
+    return gnuBadge;
+  } else if (license === 'ISC') {
+    return iscBadge;
+  } else if (license === 'ODbL') {
+    return odblBadge;
+  } else if (license === 'Apache') {
+    return apacheBadge;
+  } else {
+    return ' ';
+  }
+}
+
+
 
 function generateMarkdown({title, licenseBadge, description, installation, usage, credits, contribute, test, license, github, email}) {
   return `
-  # ${title} ${licenseBadge}
+  
+  # ${title} 
+  ## Badges
+  ${renderLicenseBadge({license})}
   ## Description:
   ${description}
  
@@ -27,8 +56,8 @@ function generateMarkdown({title, licenseBadge, description, installation, usage
   ## Test:
   ${test}
   ## License:
-  The License for this project is: ${license}
-  Please go to [https://choosealicense.com/](https://choosealicense.com/) for more information regarding
+  * The License for this project is: ${license}
+  * Please go to [https://choosealicense.com/](https://choosealicense.com/) for more information regarding
   licenses.
   ## Contact:
   * GitHub: ${github}
