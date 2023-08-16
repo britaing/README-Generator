@@ -1,5 +1,5 @@
 
-  # a
+  # a 
   ## Description:
   a
  
@@ -16,15 +16,17 @@
   ## Installation Instructions: 
   undefined
   ## Usage:
-  a
+  n
   ## Credits:
   undefined
   ## Ways to Contribute:
-  a
+  undefined
   ## Test:
   undefined
   ## License:
-  MIT
+  The License for this project is: MIT
+  Please go to [https://choosealicense.com/](https://choosealicense.com/) for more information regarding
+  licenses.
   ## Contact:
-  -GitHub: undefined
-  -Email:  undefined
+  * GitHub: 
+  * Email:  
