@@ -51,7 +51,12 @@ const questions = () => inquirer.prompt([
     {
         name: 'contribute',
         type: 'input',
-        message: 'What are the guidelines to contribute?'
+        message: 'What are the guidelines to contribute?',
+        when: ({contributeCon}) => {
+            if(contributeCon){
+                return true;
+            }
+        }
     },
     {
         name: 'testsEx',
@@ -84,10 +89,32 @@ const questions = () => inquirer.prompt([
         }
     },
     {
+        name: 'isLicense',
+        type: 'confirm',
+        message: 'Is there a license associated with this program?'
+    },
+    {
         name: 'license',
         type: 'list',
-        choices: ['MIT', 'GNU', 'ISC', 'ODbL', 'Apache'],
+        choices: ['MIT', 'GNU GPL v3', 'ISC', 'ODbL', 'Apache'],
+        when: ({isLicense}) => {
+            if(isLicense){
+                return true;
+            } else {
+                return ' ';
+            }
+        }
     },
+    {
+        name: 'github',
+        type: 'input',
+        message: 'What is your GitHub username?'
+    },
+    {
+        name: 'email',
+        type: 'input',
+        message: 'What is your email address?'
+    }
 ]);
 
 questions().then((answers) => {
