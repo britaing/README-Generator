@@ -121,7 +121,7 @@ const questions = () => inquirer.prompt([
 questions().then((answers) => {
     const generated = generateMarkdown(answers);
     fs.writeFileSync('./generated/README.md', generated)
-    }).then(() => console.log('Your README file has been written!'));
+    }).then(() => console.log('Huzzah! Your README file has been written!'));
 
 
 

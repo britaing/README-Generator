@@ -1,7 +1,10 @@
 
-  # a undefined
+  
+  #  
+  ## Badges
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Description:
-  b
+  A
  
   ### Table of Contents:
   
@@ -24,9 +27,9 @@
   ## Test:
   undefined
   ## License:
-  The License for this project is: MIT
-  Please go to [https://choosealicense.com/](https://choosealicense.com/) for more information regarding
+  * The License for this project is: MIT
+  * Please go to [https://choosealicense.com/](https://choosealicense.com/) for more information regarding
   licenses.
   ## Contact:
-  * GitHub: a
+  * GitHub: b
   * Email:  b
