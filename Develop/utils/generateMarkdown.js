@@ -1,8 +1,8 @@
-// const renderLicenseBadge = require('./utils/licenseRender');
+const licenseBadge = require('./licenseRender');
 
-function generateMarkdown({title, description, installation, usage, credits, contribute, test, license, github, email}) {
+function generateMarkdown({title, licenseBadge, description, installation, usage, credits, contribute, test, license, github, email}) {
   return `
-  # ${title} 
+  # ${title} ${licenseBadge}
   ## Description:
   ${description}
  
@@ -35,5 +35,10 @@ function generateMarkdown({title, description, installation, usage, credits, con
   * Email:  ${email}
 `;
 }
+
+
+
+
+
 
 module.exports = generateMarkdown;
