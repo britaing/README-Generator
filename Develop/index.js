@@ -1,6 +1,7 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
+
 const questions = () => inquirer.prompt([
     {
         name: 'title',
@@ -28,34 +29,34 @@ const questions = () => inquirer.prompt([
         }
     },
     {
-        name: 'usageCon',
+        name: 'areUsage',
         type: 'confirm',
-        message: 'Are there any special guidelines for usage?'
+        message: 'Are there any usage guidelines?'
     },
-    {
+    {   
         name: 'usage',
         type: 'input',
-        message: 'What are the usage guidelines for your project?',
-        when: ({usageCon}) => {
-            if({usageCon}){
+        message: 'What are the usage guidelines?',
+        when: ({areUsage}) => {
+            if(areUsage){
                 return true;
             }
         }
     },
        
     {
-        name: 'contributeCon',
+        name: 'canContribute',
         type: 'confirm',
-        message: 'Are there any guidelines if anyone would like to contribute to this project?'
+        message: 'Can other developers contribute to this project?'
     },
     {
         name: 'contribute',
         type: 'input',
         message: 'What are the guidelines to contribute?',
-        when: ({contributeCon}) => {
-            if(contributeCon){
+        when: ({canContribute}) => {
+            if(canContribute){
                 return true;
-            }
+            } 
         }
     },
     {
@@ -101,7 +102,7 @@ const questions = () => inquirer.prompt([
             if(isLicense){
                 return true;
             } else {
-                return ' ';
+                return '';
             }
         }
     },
@@ -119,8 +120,10 @@ const questions = () => inquirer.prompt([
 
 questions().then((answers) => {
     const generated = generateMarkdown(answers);
-    fs.writeFileSync('README.md', generated)
-    }).then(() => console.log('Your README file has been written!'))
+    fs.writeFileSync('./generated/README.md', generated)
+    }).then(() => console.log('Your README file has been written!'));
+
+
 
 function init() {}
 init();
