@@ -16,15 +16,18 @@
   * [Contact](#contact)
   
   ## Installation Instructions: 
-  Go to my git repository and clone it into your end in the command line, run the program in the terminal with "node index.js" and follow the prompts. A README will be generated at the end in the "generated" folder.
+  [Go to my git repository](https://github.com/britaing/README-Generator) and clone it into your end in the command line, run the program in the terminal with "node index.js" and follow the prompts. A README will be generated at the end in the "generated" folder.
+
+  [click here for video walk through](https://drive.google.com/file/d/1jlZPwG0l7mDFtJP5vtrpq2ETxIareNl6/view)
+
   ## Usage:
-  undefined
+  
   ## Credits:
-  undefined
+  
   ## Ways to Contribute:
-  undefined
+  
   ## Test:
-  undefined
+  
   ## License:
   * The License for this project is: MIT
   * Please go to [https://choosealicense.com/](https://choosealicense.com/) for more information regarding
